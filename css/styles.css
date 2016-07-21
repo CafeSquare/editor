@@ -1,0 +1,263 @@
+body {
+font-family: 'Raleway', sans-serif;
+}
+
+a:link, a:visited, a:hover, a:active {
+text-decoration:none;
+}
+
+p {
+font-size: 2rem;
+}
+
+/*
+========================================================
+01. UI THEME
+========================================================
+*/
+
+::selection {
+background: rgba(255, 255, 255, 0.7);
+}
+
+.content {
+width: 100%;
+}
+
+#header {
+width: 100%;
+height: auto;
+overflow: hidden;
+background: #4ECDC4;
+}
+
+.the-title {
+padding:.2em 0;
+margin: 0 auto;
+width: 100%;
+text-align: center;
+font-size: 3rem;
+letter-spacing: .1em;
+color:#fff;
+}
+
+h1.the-title:focus { outline: 1px dashed rgb(45, 49, 57); }
+p.the-title:focus { outline: 1px dashed rgba(255, 255, 255, 0.7); }
+
+/* blinking */
+
+.blinking-cursor {
+  font-size: 30px;
+  color: #fff;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+
+/*
+========================================================
+02. BOOTSTRAP STYLING
+========================================================
+*/
+
+.jumbotron {
+background: transparent;
+}
+
+.navbar-default {
+background: rgb(45, 49, 57);
+padding-top: 2em;
+border:0;
+border-radius: 0;
+}
+
+.navbar {
+margin-bottom: 0;
+}
+
+.navbar-header {
+margin-bottom: 1em;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:visited,
+.navbar-default .navbar-brand:active {
+font-weight: bold;
+color:rgb(252, 252, 252);
+font-size: 3rem;
+letter-spacing: .2rem;
+}
+
+.navbar-default .navbar-brand:hover {
+color:#4ECDC4;
+}
+
+.navbar-brand:focus { outline: none; }
+
+.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:active
+.navbar-default .navbar-toggle:focus  {
+border:0;
+background: transparent !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+border:0;
+background: transparent;
+color:rgb(252, 252, 252);
+}
+
+.navbar-default .navbar-nav>li>a:link,
+.navbar-default .navbar-nav>li>a:visited,
+.navbar-default .navbar-nav>li>a:active {
+color:rgb(252, 252, 252);
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+color:#4ECDC4;
+}
+
+.col-md-3 {
+padding-left: 0;
+padding-right: 0;
+}
+
+.jumbotron {
+margin-bottom: 0;
+}
+
+.jumbotron h1 {
+text-align: center;
+font-size: 60px;
+}
+
+.jumbotron p {
+text-align: center;
+font-size: 24px;
+}
+
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active  {
+margin-top:2em;
+padding:1.25em;
+border:0;
+border-radius: 0;
+background-color: rgb(45, 49, 57);
+}
+
+.btn-primary:hover {
+background-color: #204056;
+}
+
+/*
+========================================================
+03. MINICOLORS
+========================================================
+*/
+
+/* THE HEXADECIMAL INPUT */
+.minicolors-input {
+padding: 0 1em;
+position: relative;
+left:2.5em;
+top:1.25em;
+font-family: "Helvetica Neue", Helvetica, Arial;
+font-weight: 300;
+font-size: 1.25em;
+background: transparent;
+border:0;
+outline: none;
+}
+
+.minicolors-swatch {
+top:5px;
+left:5px;
+background: transparent !important;
+border: 0 !important;
+}
+
+/* THE SWATCH CIRCLE */
+span.minicolors-swatch-color {
+width: 3.75em;
+height: 3.75em;
+border-radius: 50%;
+border:5px solid rgba(255, 255, 255, 1);
+}
+
+.minicolors-panel {
+top:5em !important;
+}
+
+.minicolors .minicolors-grid {
+cursor: none;
+}
+
+/*
+========================================================
+MOBILE
+========================================================
+*/
+
+@media (max-width:768px) {
+
+  button.export-button {
+  margin:0 20%;
+  width: 60%;
+  padding: 2% 0;
+  background: rgb(151, 151, 216);
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  }
+
+
+}
