@@ -25,6 +25,8 @@ width: 100%;
 }
 
 #header {
+position: relative;
+z-index: 1;
 width: 100%;
 height: auto;
 overflow: hidden;
@@ -129,6 +131,8 @@ z-index:1;
 
 .jumbotron {
 background: transparent;
+position: relative;
+z-index:2;
 }
 
 .navbar-default {
@@ -228,7 +232,7 @@ left:0;
 top:6em;
 width:6em;
 border-right:1px solid  rgba(255, 255, 255, 0.9);
-z-index: 2;
+z-index: 3;
 }
 
 .editorColors {
@@ -280,13 +284,81 @@ transition-duration: 1s;
 
 i.fa.fa-trash-o {
 color:#fff;
-font-size:3em;
-padding:21px;
+font-size:2.5em;
+padding:24px;
+}
+
+i.fa.fa-adjust {
+color:#fff;
+font-size:2.5em;
+padding:24px;
+}
+
+i.fa.fa-camera {
+color:#fff;
+font-size:2.5em;
+padding:20px;
+padding-top: 24px;
 }
 
 /*
 ========================================================
-05. MINICOLORS
+05. OPACITY
+========================================================
+*/
+
+#box-slider {
+display: none;
+position: absolute;
+top: 12em;
+left: 6.1em;
+width: 200px;
+height: 6em;
+border:1px solid  rgba(255, 255, 255, 0.9);
+background: rgba(0, 0, 0, 0.7);
+}
+
+#slider {
+display: none;
+width: 12.1em;
+}
+
+.ui-slider {
+position: relative;
+text-align: left;
+left: 6em;
+top:-3em;
+z-index:3;
+}
+
+/* slider progress bar */
+.ui-slider-horizontal {
+height: .8em;
+background: transparent !important;
+border-radius: 0 !important;
+border: 0 !important;
+border-left: 2px solid #fff !important;
+background: transparent !important;
+border-right: 2px solid #fff !important;
+}
+
+/* slider circle */
+.ui-slider .ui-slider-handle {
+position: absolute;
+z-index: 2;
+width: 1em;
+height: 1em;
+top: -.19em !important;
+margin-left: -1.5em;
+border-radius: 0;
+border:0 !important;
+background: #4ecdc4 !important;
+outline: none !important;
+}
+
+/*
+========================================================
+06. COLORS
 ========================================================
 */
 

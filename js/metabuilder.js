@@ -64,19 +64,34 @@ $(function(){
 // COLOR PICKER
 
 $('#wheel-demo').minicolors({
-    value: '#cc0000'
+value: '#cc0000'
 });
 
 // TRASH HEADER
 
-  $('.blocktrash').click(function() {
-  $('#header').css('background-color', 'blue');
-  $('#header').addClass ('animated slideOutUp');
-  });
-
-// EDITOR COLOR HEADER
-
-$('.colors-list li').click(function(e) {
-    var color = $(this).text();
-    $('.results').css('background-color', color);
+$('.blocktrash').click(function() {
+$('#header').css('background-color', 'blue');
+$('#header').addClass ('animated slideOutUp');
 });
+
+// TRASH H1
+
+       $(document).ready(function() {
+           //Step 1: set up the slider with some options. The valid values for opacity are 0 to 1
+           //Step 2: Bind an event so when you slide the slider and stop, the following function gets called
+           $('#slider').slider({ min: 0, max: 1, step: 0.1, value: 1 })
+               .bind("slidechange", function() {
+                   //get the value of the slider with this call
+                   var o = $(this).slider('value');
+                   //here I am just specifying the element to change with a "made up" attribute (but don't worry, this is in the HTML specs and supported by all browsers).
+                   var e = '#' + $(this).attr('data-wjs-element');
+                   $(e).css('opacity', o)
+               });
+       });
+
+       // SHOW THE SLIDER //
+
+       $('.editorOpacity').click(function() {
+       $('#box').css('display', 'block');
+       $('#box').addClass ('animated slideInLeft');
+       });
