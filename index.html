@@ -66,45 +66,93 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-<!-- THE CONTENT -->
+  <!-- EDITOR BAR -->
 
-<div id="header">
+  <div id="editor" class="animated slideInLeft">
 
-  <input type="text" id="header-color" class="minicolors" data-control="wheel" value="#4ECDC4">
+    <div class="editorColors">
+      <input type="text" id="header-color" class="minicolors" data-control="wheel" value="#4ECDC4">
 
-  <script>
-  $(document).ready( function() {
+      <script>
+      $('#header-color').minicolors();
+      </script>
+    </div>
 
-  $('INPUT[type=minicolors]').miniColors({
-  change: function(hex, rgb) {     $('body').css("background-color",hex); }
-  });
+    <div class="editorImages">
+    </div>
 
-  });
+    <div class="editorOpacity">
+    </div>
 
-  $('#header-color').minicolors();
-  </script>
+    <div class="blocktrash">
+    <i class="fa fa-trash-o"></i>
+    </div>
+
+    <script>
+    $('.blocktrash').click(function() {
+    $('#header').addClass ('animated fadeOutUpBig');
+    $('#header').replaceWith ('#section-2');
+    $('#header').remove();
+    });
+    </script>
+
+  </div>
+  <!-- end editor -->
+
 
 <!-- THE HEADER -->
+<div id="header">
+
+<!-- JUMBOTRON -->
 
 <div class="jumbotron">
   <div class="container">
 
-    <h1 class="the-title">Hello, world!</h1>
+    <h1>Hello, world!</h1>
 
     <p class="the-title">Type Your Title</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Type Text</a></p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Button</a></p>
 
   </div>
 </div>
+<!-- end jumbotron -->
 
 </div>
-<!-- end content -->
+<!-- end header -->
+
+<!-- SECTION 2 -->
+<div id="section-2">
+
+  <div class="container">
+
+    <h2>About</h2>
+    <p class="the-title-2">The Grid: Three equal columns</p>
+
+    <div class="row">
+
+      <div class="col-md-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+
+      <div class="col-md-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+
+      <div class="col-md-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+
+    </div>
+
+  </div>
+<!-- end container -->
+</div>
+<!-- end section-2 -->
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="assets/js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js"></script>
-
 </body>
 </html>

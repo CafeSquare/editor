@@ -28,7 +28,7 @@ width: 100%;
 width: 100%;
 height: auto;
 overflow: hidden;
-background: #4ECDC4;
+background-color: #4ECDC4;
 }
 
 .the-title {
@@ -41,7 +41,17 @@ letter-spacing: .1em;
 color:#fff;
 }
 
-h1.the-title:focus { outline: 1px dashed rgb(45, 49, 57); }
+.h2 {
+margin: 0 auto;
+width: 100%;
+text-align: center !important;
+font-size: 3em;
+letter-spacing: .1em;
+color:rgb(45, 49, 57);
+}
+
+h1:focus { outline: 1px dashed rgb(45, 49, 57); }
+h2:focus { outline: 1px dashed rgb(45, 49, 57); }
 p.the-title:focus { outline: 1px dashed rgba(255, 255, 255, 0.7); }
 
 /* blinking */
@@ -101,6 +111,15 @@ p.the-title:focus { outline: 1px dashed rgba(255, 255, 255, 0.7); }
   }
 }
 
+#section-2 {
+position: relative;
+width: 100%;
+height: auto;
+overflow: hidden;
+background-color: #f5f5f5;
+z-index:1;
+}
+
 
 /*
 ========================================================
@@ -114,7 +133,7 @@ background: transparent;
 
 .navbar-default {
 background: rgb(45, 49, 57);
-padding-top: 2em;
+padding-top: 1em;
 border:0;
 border-radius: 0;
 }
@@ -175,7 +194,7 @@ margin-bottom: 0;
 
 .jumbotron h1 {
 text-align: center;
-font-size: 60px;
+font-size: 4em;
 }
 
 .jumbotron p {
@@ -199,7 +218,75 @@ background-color: #204056;
 
 /*
 ========================================================
-03. MINICOLORS
+03. EDITOR
+========================================================
+*/
+
+#editor {
+position: absolute;
+left:0;
+top:6em;
+width:6em;
+border-right:1px solid  rgba(255, 255, 255, 0.9);
+z-index: 2;
+}
+
+.editorColors {
+cursor: pointer;
+width:100%;
+height: 6em;
+background: rgba(0, 0, 0, 0.7);
+border-top:1px solid  rgba(255, 255, 255, 0.9);
+border-bottom:1px solid  rgba(255, 255, 255, 0.9);
+}
+
+.editorImages {
+cursor: pointer;
+width:100%;
+height: 6em;
+background: rgba(0, 0, 0, 0.7);
+border-bottom:1px solid  rgba(255, 255, 255, 0.9);
+}
+
+.editorOpacity {
+cursor: pointer;
+width:100%;
+height: 6em;
+background: rgba(0, 0, 0, 0.7);
+border-bottom:1px solid  rgba(255, 255, 255, 0.9);
+}
+
+.blocktrash {
+cursor: pointer;
+width:100%;
+height: 6em;
+background: rgba(0, 0, 0, 0.7);
+border-bottom:1px solid  rgba(255, 255, 255, 0.9);
+}
+
+.editorImages:hover,
+.editorOpacity:hover,
+.blocktrash:hover {
+background: rgba(0, 0, 0, 0.9);
+-webkit-transition-duration: 1s; /* Safari */
+transition-duration: 1s;
+}
+
+/*
+========================================================
+04. FONT AWESOME STYLING
+========================================================
+*/
+
+i.fa.fa-trash-o {
+color:#fff;
+font-size:3em;
+padding:21px;
+}
+
+/*
+========================================================
+05. MINICOLORS
 ========================================================
 */
 
@@ -218,22 +305,20 @@ outline: none;
 }
 
 .minicolors-swatch {
-top:5px;
-left:5px;
+top:0 !important;
+left:0 !important;
 background: transparent !important;
 border: 0 !important;
 }
 
 /* THE SWATCH CIRCLE */
 span.minicolors-swatch-color {
-width: 3.75em;
-height: 3.75em;
-border-radius: 50%;
-border:5px solid rgba(255, 255, 255, 1);
+width: 5.95em;
+height: 5.85em;
 }
 
 .minicolors-panel {
-top:5em !important;
+top:6em !important;
 }
 
 .minicolors .minicolors-grid {
@@ -248,16 +333,9 @@ MOBILE
 
 @media (max-width:768px) {
 
-  button.export-button {
-  margin:0 20%;
-  width: 60%;
-  padding: 2% 0;
-  background: rgb(151, 151, 216);
-  border-radius: 20px;
-  color: #fff;
-  font-size: 16px;
-  text-align: center;
-  }
+.navbar-default .navbar-nav>li>a {
+text-align: right;
+}
 
 
 }

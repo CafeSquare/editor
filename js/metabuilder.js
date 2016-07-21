@@ -30,18 +30,14 @@ $( function() {
 
 // RESIZE ME.
 $( function() {
-    $( "#header" ).resizable();
+    $( "#resizable" ).resizable();
   } );
 
 // EDITABLE H1.
 
 $(function(){
-    var $div=$('h1.the-title'), isEditable=$div.is('.editable');
-    $('h1.the-title').prop('contenteditable',!isEditable).toggleClass('editable');
-})
-
-$( "h1.the-title" ).focus(function() {
-    $('.blinking-cursor').css('display','none');
+    var $div=$('h1'), isEditable=$div.is('.editable');
+    $('h1').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
 // EDITABLE TEXT JUMBOTRON.
@@ -49,10 +45,6 @@ $( "h1.the-title" ).focus(function() {
 $(function(){
     var $div=$('p.the-title'), isEditable=$div.is('.editable');
     $('p.the-title').prop('contenteditable',!isEditable).toggleClass('editable');
-})
-
-$( "p.the-title" ).focus(function() {
-    $('.blinking-cursor').css('display','none');
 })
 
 // EDITABLE CALL-TO-ACTION JUMBOTRON.
@@ -73,4 +65,18 @@ $(function(){
 
 $('#wheel-demo').minicolors({
     value: '#cc0000'
+});
+
+// TRASH HEADER
+
+  $('.blocktrash').click(function() {
+  $('#header').css('background-color', 'blue');
+  $('#header').addClass ('animated slideOutUp');
+  });
+
+// EDITOR COLOR HEADER
+
+$('.colors-list li').click(function(e) {
+    var color = $(this).text();
+    $('.results').css('background-color', color);
 });
