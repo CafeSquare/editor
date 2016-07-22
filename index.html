@@ -21,10 +21,9 @@
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/b611e09f3f.js"></script>
 
-    <!-- MetaBuilder -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-    <script src="js/metabuilder.js"></script>
 
     <!-- MiniColors -->
     <script src="js/jquery.minicolors.js"></script>
@@ -93,56 +92,9 @@
     <div id="slider" data-wjs-element="header"></div>
     <div id="box-slider"></div>
 
-<script>
-    $(document).ready(function() {
-        //Step 1: set up the slider with some options. The valid values for opacity are 0 to 1
-        //Step 2: Bind an event so when you slide the slider and stop, the following function gets called
-        $('#slider').slider({ min: 0, max: 1, step: 0.1, value: 1 })
-            .bind("slidechange", function() {
-                //get the value of the slider with this call
-                var o = $(this).slider('value');
-                //the element to change with an attribute
-                var e = '#' + $(this).attr('data-wjs-element');
-                $(e).css('opacity', o);
-                $('.jumbotron').css('opacity', '1');
-            });
-    });
-
-    // OPACITY SLIDER ON //
-
-    $('.editorOpacity').click(function() {
-    $('#box-slider').addClass ('animated fadeIn');
-    $('#box-slider').removeClass ('fadeOut');
-    $('#box-slider').css('display', 'block');
-    $('.editorOpacityOff').css('display', 'block');
-    $('.editorOpacity').css('display', 'none');
-    $('#slider').css('display', 'block');
-    });
-
-    // OPACITY SLIDER OFF //
-
-    $('.editorOpacityOff').click(function() {
-    $('#box-slider').addClass ('fadeOut');
-    $('#box-slider').removeClass ('fadeIn');
-    $('#box-slider').css('display', 'none');
-    $('.editorOpacity').css('display', 'block');
-    $('.editorOpacityOff').css('display', 'none');
-    $('#slider').css('display', 'none');
-    });
-
-</script>
-
     <div class="blocktrash">
     <i class="fa fa-trash-o"></i>
     </div>
-
-    <script>
-    $('.blocktrash').click(function() {
-    $('#header').addClass ('animated fadeOutUpBig');
-    $('#header').replaceWith ('#section-2');
-    $('#header').remove();
-    });
-    </script>
 
   </div>
   <!-- end editor -->
@@ -194,7 +146,8 @@
 </div>
 <!-- end section-2 -->
 
-
+<!-- The Builder before jQuery _ jQuery UI -->
+<script src="js/metabuilder.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

@@ -67,31 +67,50 @@ $('#wheel-demo').minicolors({
 value: '#cc0000'
 });
 
-// TRASH HEADER
+// DELETE JUMBOTRON.
+
+$(document).ready(function() {
 
 $('.blocktrash').click(function() {
-$('#header').css('background-color', 'blue');
-$('#header').addClass ('animated slideOutUp');
+$("#header").show().delay(500).fadeOut();
 });
 
-// TRASH H1
+});
 
-       $(document).ready(function() {
-           //Step 1: set up the slider with some options. The valid values for opacity are 0 to 1
-           //Step 2: Bind an event so when you slide the slider and stop, the following function gets called
-           $('#slider').slider({ min: 0, max: 1, step: 0.1, value: 1 })
-               .bind("slidechange", function() {
-                   //get the value of the slider with this call
-                   var o = $(this).slider('value');
-                   //here I am just specifying the element to change with a "made up" attribute (but don't worry, this is in the HTML specs and supported by all browsers).
-                   var e = '#' + $(this).attr('data-wjs-element');
-                   $(e).css('opacity', o)
-               });
-       });
+// OPACITY.
 
-       // SHOW THE SLIDER //
+    $(document).ready(function() {
+        //Step 1: set up the slider with some options. The valid values for opacity are 0 to 1
+        //Step 2: Bind an event so when you slide the slider and stop, the following function gets called
+        $('#slider').slider({ min: 0, max: 1, step: 0.1, value: 1 })
+            .bind("slidechange", function() {
+                //get the value of the slider with this call
+                var o = $(this).slider('value');
+                //the element to change with an attribute
+                var e = '#' + $(this).attr('data-wjs-element');
+                $(e).css('opacity', o);
+                $('.jumbotron').css('opacity', '1');
+            });
+    });
 
-       $('.editorOpacity').click(function() {
-       $('#box').css('display', 'block');
-       $('#box').addClass ('animated slideInLeft');
-       });
+    // OPACITY SLIDER ON //
+
+    $('.editorOpacity').click(function() {
+    $('#box-slider').addClass ('animated fadeIn');
+    $('#box-slider').removeClass ('fadeOut');
+    $('#box-slider').css('display', 'block');
+    $('.editorOpacityOff').css('display', 'block');
+    $('.editorOpacity').css('display', 'none');
+    $('#slider').css('display', 'block');
+    });
+
+    // OPACITY SLIDER OFF //
+
+    $('.editorOpacityOff').click(function() {
+    $('#box-slider').addClass ('fadeOut');
+    $('#box-slider').removeClass ('fadeIn');
+    $('#box-slider').css('display', 'none');
+    $('.editorOpacity').css('display', 'block');
+    $('.editorOpacityOff').css('display', 'none');
+    $('#slider').css('display', 'none');
+    });
