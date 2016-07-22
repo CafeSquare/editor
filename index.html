@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CafeSquare</title>
+    <title>OneSquare</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +68,7 @@
 
   <!-- EDITOR BAR -->
 
-  <div id="editor" class="animated bounceInLeft">
+  <div id="editor" class="animated slideInLeft">
 
     <div class="editorColors">
       <input type="text" id="header-color" class="minicolors" data-control="wheel" value="#4ECDC4">
@@ -82,8 +82,13 @@
     <i class="fa fa-camera"></i>
     </div>
 
+    <div class="editorOpacityOff">
+    <i class="fa fa-adjust"></i>
+    </div>
+
     <div class="editorOpacity">
     <i class="fa fa-adjust"></i>
+    </div>
 
     <div id="slider" data-wjs-element="header"></div>
     <div id="box-slider"></div>
@@ -96,23 +101,36 @@
             .bind("slidechange", function() {
                 //get the value of the slider with this call
                 var o = $(this).slider('value');
-                //here I am just specifying the element to change with a "made up" attribute (but don't worry, this is in the HTML specs and supported by all browsers).
+                //the element to change with an attribute
                 var e = '#' + $(this).attr('data-wjs-element');
-                $(e).css('opacity', o)
+                $(e).css('opacity', o);
+                $('.jumbotron').css('opacity', '1');
             });
     });
 
-    // SHOW THE SLIDER //
+    // OPACITY SLIDER ON //
 
     $('.editorOpacity').click(function() {
+    $('#box-slider').addClass ('animated fadeIn');
+    $('#box-slider').removeClass ('fadeOut');
     $('#box-slider').css('display', 'block');
-    $('#box-slider').addClass ('animated bounceIn');
+    $('.editorOpacityOff').css('display', 'block');
+    $('.editorOpacity').css('display', 'none');
     $('#slider').css('display', 'block');
     });
 
-</script>
+    // OPACITY SLIDER OFF //
 
-    </div>
+    $('.editorOpacityOff').click(function() {
+    $('#box-slider').addClass ('fadeOut');
+    $('#box-slider').removeClass ('fadeIn');
+    $('#box-slider').css('display', 'none');
+    $('.editorOpacity').css('display', 'block');
+    $('.editorOpacityOff').css('display', 'none');
+    $('#slider').css('display', 'none');
+    });
+
+</script>
 
     <div class="blocktrash">
     <i class="fa fa-trash-o"></i>
@@ -129,8 +147,6 @@
   </div>
   <!-- end editor -->
 
-
-<!-- THE HEADER -->
 <div id="header">
 
 <!-- JUMBOTRON -->
@@ -181,9 +197,8 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-<script src="assets/js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/base/jquery-ui.css" type="text/css"/>
 <script src="js/bootstrap.min.js"></script>
+<!-- jQuery UI -->
+<script src="js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
 </body>
 </html>
