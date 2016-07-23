@@ -61,12 +61,6 @@ $(function(){
     $('.navbar-brand').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
-// COLOR PICKER
-
-$('#wheel-demo').minicolors({
-value: '#cc0000'
-});
-
 // DELETE JUMBOTRON.
 
 $(document).ready(function() {
@@ -114,3 +108,5 @@ $("#header").show().delay(500).fadeOut();
     $('.editorOpacityOff').css('display', 'none');
     $('#slider').css('display', 'none');
     });
+
+// COLOR PICKER
