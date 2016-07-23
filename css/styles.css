@@ -230,16 +230,15 @@ background-color: #204056;
 position: absolute;
 left:0;
 top:6em;
-width:6em;
+width:5em;
 z-index: 3;
-border:1px solid  rgba(0, 0, 0, 0.9);
 }
 
 .editorColors {
 float: left;
 cursor: pointer;
 width:100%;
-height: 6em;
+height: 5em;
 background: rgba(0, 0, 0, 0.7);
 }
 
@@ -247,7 +246,7 @@ background: rgba(0, 0, 0, 0.7);
 float: left;
 cursor: pointer;
 width:100%;
-height: 6em;
+height: 5em;
 background: rgba(0, 0, 0, 0.7);
 }
 
@@ -255,7 +254,7 @@ background: rgba(0, 0, 0, 0.7);
 float: left;
 cursor: pointer;
 width:100%;
-height: 6em;
+height: 5em;
 background: rgba(0, 0, 0, 0.7);
 }
 
@@ -264,7 +263,7 @@ float: left;
 display: none;
 cursor: pointer;
 width:100%;
-height: 6em;
+height: 5em;
 background: rgba(0, 0, 0, 0.9);
 }
 
@@ -272,7 +271,7 @@ background: rgba(0, 0, 0, 0.9);
 float: left;
 cursor: pointer;
 width:100%;
-height: 6em;
+height: 5em;
 background: rgba(0, 0, 0, 0.7);
 }
 
@@ -292,19 +291,19 @@ transition-duration: 1s;
 
 i.fa.fa-trash-o {
 color:#fff;
-font-size:2.5em;
-padding:24px;
+font-size:2em;
+padding:22px;
 }
 
 i.fa.fa-adjust {
 color:#fff;
-font-size:2.5em;
-padding:24px;
+font-size:2em;
+padding:22px;
 }
 
 i.fa.fa-camera {
 color:#fff;
-font-size:2.5em;
+font-size:1.7em;
 padding:20px;
 padding-top: 24px;
 }
@@ -318,32 +317,32 @@ padding-top: 24px;
 #box-slider {
 display: none;
 position: absolute;
-top: 12em;
-left: 6.1em;
-width: 16em;
-height: 6em;
+top: 10em;
+left: 5.1em;
+width: 10em;
+height: 5em;
 background: rgba(0, 0, 0, 0.7);
 z-index:5;
 }
 
 #slider {
 position:absolute;
-top:14.5em;
-left:8em;
+top:12.1em;
+left:6em;
 display: none;
-width: 13em;
+width: 8em !important;
 z-index: 6;
 }
 
 /* slider progress bar */
 .ui-slider-horizontal {
-width:14em !important;
+width:11em !important;
 height: .8em;
 border-radius: 0 !important;
 border: 0 !important;
 border-left: 2px solid #fff !important;
 background: transparent !important;
-left:6.4em !important;
+left:5.4em !important;
 position:relative !important;
 }
 
@@ -390,8 +389,8 @@ border: 0 !important;
 
 /* THE SWATCH CIRCLE */
 span.minicolors-swatch-color {
-width: 5.95em;
-height: 5.85em;
+width: 5em;
+height: 5em;
 }
 
 .minicolors-panel {
