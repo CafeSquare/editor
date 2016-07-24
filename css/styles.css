@@ -56,6 +56,7 @@ h1:focus { outline: 1px dashed rgb(45, 49, 57); }
 h2:focus { outline: 1px dashed rgb(45, 49, 57); }
 p.the-title:focus { outline: 1px dashed rgba(255, 255, 255, 0.7); }
 
+
 /* blinking */
 
 .blinking-cursor {
@@ -232,6 +233,15 @@ left:0;
 top:6em;
 width:5em;
 z-index: 3;
+border:0;
+}
+
+.editorClose {
+float: left;
+cursor: pointer;
+width:100%;
+height: 2.25em;
+background: rgba(47,54,70, 0.9);
 }
 
 .editorColors {
@@ -239,7 +249,7 @@ float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(0, 0, 0, 0.7);
+background: rgba(47,54,70, 0.7);
 }
 
 .editorImages {
@@ -247,7 +257,7 @@ float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(0, 0, 0, 0.7);
+background: rgba(47,54,70, 0.7);
 }
 
 .editorOpacity {
@@ -255,7 +265,7 @@ float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(0, 0, 0, 0.7);
+background: rgba(47,54,70, 0.7);
 }
 
 .editorOpacityOff {
@@ -264,21 +274,21 @@ display: none;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(0, 0, 0, 0.9);
+background: rgba(47,54,70, 0.9);
 }
 
-.blocktrash {
+.editortrash {
 float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
-background: rgba(0, 0, 0, 0.7);
+background: rgba(47,54,70, 0.7);
 }
 
 .editorImages:hover,
 .editorOpacity:hover,
-.blocktrash:hover {
-background: rgba(0, 0, 0, 0.9);
+.editortrash:hover {
+background: rgba(47,54,70, 0.9);
 -webkit-transition-duration: 1s; /* Safari */
 transition-duration: 1s;
 }
@@ -317,17 +327,17 @@ padding-top: 24px;
 #box-slider {
 display: none;
 position: absolute;
-top: 10em;
+top: 12.25em;
 left: 5.1em;
 width: 10em;
 height: 5em;
-background: rgba(0, 0, 0, 0.7);
+background: rgba(47,54,70, 0.7);
 z-index:5;
 }
 
 #slider {
 position:absolute;
-top:12.1em;
+top:14.25em;
 left:6em;
 display: none;
 width: 8em !important;
@@ -389,7 +399,7 @@ border: 0 !important;
 
 /* THE SWATCH CIRCLE */
 span.minicolors-swatch-color {
-width: 5em;
+width: 4.95em;
 height: 5em;
 }
 

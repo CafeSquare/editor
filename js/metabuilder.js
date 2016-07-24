@@ -61,17 +61,7 @@ $(function(){
     $('.navbar-brand').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
-// DELETE JUMBOTRON.
-
-$(document).ready(function() {
-
-$('.blocktrash').click(function() {
-$("#header").show().delay(500).fadeOut();
-});
-
-});
-
-// OPACITY.
+// SLIDER OPACITY.
 
     $(document).ready(function() {
         //Step 1: set up the slider with some options. The valid values for opacity are 0 to 1
@@ -81,9 +71,9 @@ $("#header").show().delay(500).fadeOut();
                 //get the value of the slider with this call
                 var o = $(this).slider('value');
                 //the element to change with an attribute
-                var e = '#' + $(this).attr('data-wjs-element');
+                var e = '#' + $(this).data('wjs-element');
+                // $(e).css('background-color', 'rgba(0, 0, 0, ' + o + ')');
                 $(e).css('opacity', o);
-                $('.jumbotron').css('opacity', '1');
             });
     });
 
@@ -109,4 +99,31 @@ $("#header").show().delay(500).fadeOut();
     $('#slider').css('display', 'none');
     });
 
+    // EDITOR OFF //
+
+    $('.editorClose').click(function() {
+    $('#editor').removeClass ('slideInLeft');
+    $('#editor').addClass ('slideOutLeft');
+    });
+
 // COLOR PICKER
+
+$('#header').minicolors()
+
+// update table colour after changes in the colour picker
+$("#header").on('change', function() {
+var newCol = $(this).parent().find('.minicolors-swatch-color').attr('style');
+
+$('.colourChosen').attr('style', newCol);
+
+});
+
+// DELETE JUMBOTRON.
+
+$(document).ready(function() {
+
+$('.editortrash').click(function() {
+$("#header").hide().delay(500).fadeOut();
+});
+
+});
