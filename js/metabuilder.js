@@ -1,10 +1,9 @@
-// DRAGGABLE
-
-// DRAG WITHOUT SNAP
-
-//  $( function() {
-//    $( "#draggable-section" ).draggable();
-//  } );
+/*
+ * MetaBuilder: The Engine behind SquareOne
+ *
+ * Copyright: Andres Buzzio https://andresbuzzio.github.io/portfolio
+ *
+ */
 
 // DRAG & SNAP.
 
@@ -99,14 +98,25 @@ $(function(){
     $('#slider').css('display', 'none');
     });
 
-    // EDITOR OFF //
+// EDITOR OFF  < //
 
-    $('.editorClose').click(function() {
-    $('#editor').removeClass ('slideInLeft');
-    $('#editor').addClass ('slideOutLeft');
-    });
+$('.editorClose').click(function() {
+$('#editor').removeClass ('slideInLeft');
+$('#editor').addClass ('slideOutLeft');
+$('.editorOpen').css ('display', 'block');
+$('.editorClose').css ('display', 'none');
+});
 
-// COLOR PICKER
+// EDITOR ON  > //
+
+$('.editorOpen').click(function() {
+$('#editor').removeClass ('slideOutLeft');
+$('#editor').addClass ('slideInLeft');
+$('.editorOpen').css ('display', 'none');
+$('.editorClose').css ('display', 'block');
+});
+
+// COLOR PICKER // DAY 06
 
 $('#header').minicolors()
 
@@ -127,3 +137,7 @@ $("#header").hide().delay(500).fadeOut();
 });
 
 });
+
+// BROWSE IMAGES.
+
+// $("#theDiv").append("<img id='theImg' src='theImg.png'/>");

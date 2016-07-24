@@ -230,18 +230,35 @@ background-color: #204056;
 #editor {
 position: absolute;
 left:0;
-top:6em;
+top:8.25em;
 width:5em;
 z-index: 3;
 border:0;
+border-top:1px solid rgba(47,54,70, 0.7);
 }
 
 .editorClose {
+position:absolute;
+top:6em;
+display: block;
 float: left;
 cursor: pointer;
-width:100%;
+width:5em;
 height: 2.25em;
 background: rgba(47,54,70, 0.9);
+z-index:8;
+}
+
+.editorOpen {
+position:absolute;
+top:6em;
+display: none;
+float: left;
+cursor: pointer;
+width:2.25em;
+height: 2.25em;
+background: rgba(47,54,70, 0.9);
+z-index:8;
 }
 
 .editorColors {
@@ -318,6 +335,20 @@ padding:20px;
 padding-top: 24px;
 }
 
+i.fa-angle-right {
+padding: 2px;
+padding-left: 6px;
+color: #fff;
+font-size: 2em;
+}
+
+i.fa-angle-left {
+padding: 2px;
+padding-left: 6px;
+color: #fff;
+font-size: 2em;
+}
+
 /*
 ========================================================
 05. OPACITY
@@ -327,7 +358,7 @@ padding-top: 24px;
 #box-slider {
 display: none;
 position: absolute;
-top: 12.25em;
+top: 10em;
 left: 5.1em;
 width: 10em;
 height: 5em;
@@ -337,7 +368,7 @@ z-index:5;
 
 #slider {
 position:absolute;
-top:14.25em;
+top:12em;
 left:6em;
 display: none;
 width: 8em !important;
@@ -350,7 +381,7 @@ width:11em !important;
 height: .8em;
 border-radius: 0 !important;
 border: 0 !important;
-border-left: 2px solid #fff !important;
+/* border-left: 2px solid #fff !important; */
 background: transparent !important;
 left:5.4em !important;
 position:relative !important;
