@@ -95,7 +95,7 @@
     <div id="browse">
 
     <label class="fileUpload">
-    <input id="uploadBtn" type="file" class="upload" />
+    <input id="uploadBtn" type="file" class="upload" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);" />
     <span class="uploadBtn">Upload</span>
     </label>
 
@@ -120,6 +120,8 @@
   <!-- end editor -->
 
 <div id="header" class="colourChosen">
+
+<img id="blah" src="#" alt="" />
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">

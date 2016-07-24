@@ -260,22 +260,6 @@ color:#fff;
 }
 
 /*
-.inputFileContainer input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    width:3em;
-    height: 3em;
-    font-size: 20px;
-    cursor: pointer;
-    background: #4ecdc4;
-    outline: none;
-}
-*/
-
-/*
 ========================================================
 03. EDITOR
 ========================================================
@@ -375,6 +359,19 @@ background: rgba(47,54,70, 0.7);
 background: rgba(47,54,70, 0.9);
 -webkit-transition-duration: 1s; /* Safari */
 transition-duration: 1s;
+}
+
+/*
+========================================================
+03.1 UPLOAD IMAGE
+========================================================
+*/
+
+#blah {
+position: absolute;
+top:0;
+background-size: cover;
+max-width: 100%;
 }
 
 /*
