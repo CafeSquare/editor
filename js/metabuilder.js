@@ -141,3 +141,22 @@ $("#header").hide().delay(500).fadeOut();
 // BROWSE IMAGES.
 
 // $("#theDiv").append("<img id='theImg' src='theImg.png'/>");
+
+// BROWSE IMAGE //
+
+$('.editorImages').click(function() {
+$('#browse').addClass ('animated fadeIn');
+$('#browse').css('display', 'block');
+$('.editorImages').css('display', 'none');
+$('.editorImagesOpen').css('display', 'block');
+});
+
+// BROWSE IMAGE WHEN OPEN EDITOR //
+
+$('.editorImagesOpen').click(function() {
+$('#browse').addClass ('fadeIn');
+$('#browse').removeClass ('fadeOut');
+$('#browse').css ('display', 'none');
+$('.editorImages').css('display', 'block');
+$('.editorImagesOpen').css('display', 'none');
+});

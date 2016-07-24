@@ -221,6 +221,60 @@ background-color: rgb(45, 49, 57);
 background-color: #204056;
 }
 
+.fileUpload {
+position: relative;
+overflow: hidden;
+border:0;
+display:inline-block;
+vertical-align:top;
+padding: 1.7em;
+letter-spacing: 1px;
+cursor: pointer;
+}
+
+.uploadBtn{
+display:inline-block;
+vertical-align:top;
+background:transparent;
+font-size:1em;
+padding:0 1em;
+height:25px;
+color:#4ecdc4;
+text-transform: uppercase;
+}
+
+.uploadBtn:hover {
+color:#fff;
+}
+
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+/*
+.inputFileContainer input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width:3em;
+    height: 3em;
+    font-size: 20px;
+    cursor: pointer;
+    background: #4ecdc4;
+    outline: none;
+}
+*/
+
 /*
 ========================================================
 03. EDITOR
@@ -275,6 +329,19 @@ cursor: pointer;
 width:100%;
 height: 5em;
 background: rgba(47,54,70, 0.7);
+}
+
+.editorImagesOpen {
+display: none;
+float: left;
+cursor: pointer;
+width:100%;
+height: 5em;
+background: rgba(47,54,70, 0.9);
+}
+
+.inputFileContainer {
+padding:1.8em;
 }
 
 .editorOpacity {
@@ -361,7 +428,7 @@ position: absolute;
 top: 10em;
 left: 5.1em;
 width: 10em;
-height: 5em;
+height: 4.95em;
 background: rgba(47,54,70, 0.7);
 z-index:5;
 }
@@ -440,6 +507,23 @@ top:6em !important;
 
 .minicolors .minicolors-grid {
 cursor: none;
+}
+
+/*
+========================================================
+07. IMAGES
+========================================================
+*/
+
+#browse {
+display: none;
+position: absolute;
+top: 5em;
+left: 5.1em;
+width: 10em;
+height: 4.95em;
+background: rgba(47,54,70, 0.7);
+z-index:5;
 }
 
 /*
