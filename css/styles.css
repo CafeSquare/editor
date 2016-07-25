@@ -56,7 +56,6 @@ h1:focus { outline: 1px dashed rgb(45, 49, 57); }
 h2:focus { outline: 1px dashed rgb(45, 49, 57); }
 p.the-title:focus { outline: 1px dashed rgba(255, 255, 255, 0.7); }
 
-
 /* blinking */
 
 .blinking-cursor {
@@ -261,7 +260,7 @@ color:#fff;
 
 /*
 ========================================================
-03. EDITOR
+03. EDITOR LEFT
 ========================================================
 */
 
@@ -272,7 +271,6 @@ top:8.25em;
 width:5em;
 z-index: 3;
 border:0;
-border-top:1px solid rgba(47,54,70, 0.7);
 }
 
 .editorClose {
@@ -363,11 +361,77 @@ transition-duration: 1s;
 
 /*
 ========================================================
-03.1 UPLOAD IMAGE
+03.1 EDITOR RIGHT
 ========================================================
 */
 
-#blah {
+#editorRight {
+position: absolute;
+right:0;
+top:8.25em;
+width:5em;
+z-index: 3;
+border:0;
+}
+
+.h1-editor {
+display: none;
+cursor: pointer;
+position: absolute;
+top:0;
+right:0;
+color:#fff;
+width:100%;
+height: 2.5em;
+background: rgba(47,54,70, 0.7);
+z-index: 3;
+}
+
+.row-2 {
+top:2.5em;
+}
+
+.row-3 {
+top:5em;
+}
+
+.row-4 {
+top:7.5em;
+}
+
+.editorCloseRight {
+position:absolute;
+top:6em;
+right: 0;
+text-align: right;
+display: block;
+cursor: pointer;
+width:5em;
+height: 2.25em;
+background: rgba(47,54,70, 0.9);
+z-index:8;
+}
+
+.editorOpenRight {
+position:absolute;
+top:6em;
+right: 0;
+text-align: right;
+display: none;
+cursor: pointer;
+width:2.25em;
+height: 2.25em;
+background: rgba(47,54,70, 0.9);
+z-index:8;
+}
+
+/*
+========================================================
+03.2 UPLOAD IMAGE
+========================================================
+*/
+
+#header-image {
 position: absolute;
 top:0;
 background-size: cover;
@@ -401,16 +465,44 @@ padding-top: 24px;
 
 i.fa-angle-right {
 padding: 2px;
-padding-left: 6px;
+padding-left:0 6px;
 color: #fff;
 font-size: 2em;
 }
 
 i.fa-angle-left {
 padding: 2px;
-padding-left: 6px;
+padding-left:0 6px;
 color: #fff;
 font-size: 2em;
+}
+
+i.fa-align-left {
+padding: 6px;
+padding-left:24px;
+color: #fff;
+font-size: 1.5em;
+}
+
+i.fa-align-center {
+padding: 6px;
+padding-left:24px;
+color: #fff;
+font-size: 1.5em;
+}
+
+i.fa-align-right {
+padding: 6px;
+padding-left:24px;
+color: #fff;
+font-size: 1.5em;
+}
+
+i.fa-align-justify {
+padding: 6px;
+padding-left:24px;
+color: #fff;
+font-size: 1.5em;
 }
 
 /*
@@ -426,7 +518,7 @@ top: 10em;
 left: 5.1em;
 width: 10em;
 height: 4.95em;
-background: rgba(47,54,70, 0.7);
+background: rgba(47,54,70, 0.8);
 z-index:5;
 }
 
@@ -519,7 +611,7 @@ top: 5em;
 left: 5.1em;
 width: 10em;
 height: 4.95em;
-background: rgba(47,54,70, 0.7);
+background: rgba(47,54,70, 0.8);
 z-index:5;
 }
 

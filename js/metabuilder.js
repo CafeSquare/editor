@@ -98,7 +98,7 @@ $(function(){
     $('#slider').css('display', 'none');
     });
 
-// EDITOR OFF  < //
+// TRIGGER EDITOR OFF  < //
 
 $('.editorClose').click(function() {
 $('#editor').removeClass ('slideInLeft');
@@ -107,13 +107,31 @@ $('.editorOpen').css ('display', 'block');
 $('.editorClose').css ('display', 'none');
 });
 
-// EDITOR ON  > //
+// TRIGGER EDITOR ON  > //
 
 $('.editorOpen').click(function() {
 $('#editor').removeClass ('slideOutLeft');
 $('#editor').addClass ('slideInLeft');
 $('.editorOpen').css ('display', 'none');
 $('.editorClose').css ('display', 'block');
+});
+
+// TRIGGER EDITOR RIGHT OFF  > //
+
+$('.editorCloseRight').click(function() {
+$('#editorRight').removeClass ('slideInRight');
+$('#editorRight').addClass ('slideOutRight');
+$('.editorOpenRight').css ('display', 'block');
+$('.editorCloseRight').css ('display', 'none');
+});
+
+// TRIGGER EDITOR RIGHT ON  < //
+
+$('.editorOpenRight').click(function() {
+$('#editorRight').removeClass ('slideOutRight');
+$('#editorRight').addClass ('slideInRight');
+$('.editorOpenRight').css ('display', 'none');
+$('.editorCloseRight').css ('display', 'block');
 });
 
 // COLOR PICKER // DAY 06
@@ -138,11 +156,7 @@ $("#header").hide().delay(500).fadeOut();
 
 });
 
-// BROWSE IMAGES.
-
-// $("#theDiv").append("<img id='theImg' src='theImg.png'/>");
-
-// BROWSE IMAGE //
+// BROWSE IMAGES > //
 
 $('.editorImages').click(function() {
 $('#browse').addClass ('animated fadeIn');
@@ -151,7 +165,7 @@ $('.editorImages').css('display', 'none');
 $('.editorImagesOpen').css('display', 'block');
 });
 
-// BROWSE IMAGE WHEN OPEN EDITOR //
+// BROWSE IMAGES < //
 
 $('.editorImagesOpen').click(function() {
 $('#browse').addClass ('fadeIn');
@@ -168,12 +182,39 @@ function readURL(input) {
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                $('#blah')
+                $('#header-image')
                     .attr('src', e.target.result)
                     .width('100%')
-                    .height('100%');
+                    .height('auto');
             };
 
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+// H1 EDITOR.
+
+$(function() {
+    $("h1").focus( function() {
+        $(".h1-editor").css("display","block");
+        $(".h1-editor").addClass("animated slideInRight");
+    });
+});
+
+// H1 ALIGNMENT
+
+$('.alignMeLeft').click(function() {
+$('h1').css ('text-align', 'left');
+});
+
+$('.alignMeRight').click(function() {
+$('h1').css ('text-align', 'right');
+});
+
+$('.alignMeCenter').click(function() {
+$('h1').css ('text-align', 'center');
+});
+
+$('.alignMeJustify').click(function() {
+$('h1').css ('text-align', 'justify');
+});
