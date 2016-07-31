@@ -32,7 +32,10 @@
     <link rel="stylesheet" href="css/jquery.minicolors.css">
 
     <!-- ANGULAR JS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/app.js"></script>
+
 
   </head>
   <body ng-app="myApp">
@@ -80,7 +83,9 @@
 <div class="jumbotron">
   <div class="container">
 
-    <h1 id="h1" class="h1colour">Hello, World.</h1>
+    <div class="main" ng-controller="MainController">
+    <h1 id="h1" class="h1colour">{{ title }}</h1>
+    </div>
 
     <h2 class="subtitle">
     Get a Site in seconds.
@@ -151,15 +156,6 @@
 
 <!-- THE EDITOR -->
 <div ng-include="'editor.html'"></div>
-
-<script>
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-    $http.get("customers.php").then(function (response) {
-        $scope.names = response.data.records;
-    });
-});
-</script>
 
 <!-- JS The Builder before jQuery _ jQuery UI -->
 <script src="js/metabuilder.js"></script>
