@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <title>MadeSmart</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/magic.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/fontselect.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,500,700" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/b611e09f3f.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+    <!-- MiniColors -->
+    <script src="js/jquery.minicolors.js"></script>
+    <link rel="stylesheet" href="css/jquery.minicolors.css">
+
+  </head>
+  <body>
+
+
+<!-- EDITOR BAR LEFT -->
+
+    <div class="editorClose animated slideInLeft">
+    <i class="fa fa-angle-left"></i>
+    </div>
+
+    <div class="editorOpen animated fadeIn">
+    <i class="fa fa-angle-right"></i>
+    </div>
+
+    <div id="editor" class="animated slideInLeft">
+
+    <div class="editorColors">
+    <input type="hidden" id="header" class="" data-control="wheel" value="#0FFADC">
+    </div>
+
+    <div class="editorImages">
+    <i class="fa fa-camera"></i>
+    </div>
+
+    <div class="editorImagesOpen">
+    <i class="fa fa-camera"></i>
+    </div>
+
+    <div id="browse">
+
+    <label class="fileUpload">
+    <input id="uploadBtn" type="file" class="upload" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);" />
+    <span class="uploadBtn">Upload</span>
+    </label>
+
+    </div>
+
+    <div class="editorOpacityOff">
+    <i class="fa fa-adjust"></i>
+    </div>
+
+    <div class="editorOpacity">
+    <i class="fa fa-adjust"></i>
+    </div>
+
+    <div id="slider" data-wjs-element="header"></div>
+    <div id="box-slider"></div>
+
+    <div class="editortrash">
+    <i class="fa fa-trash-o"></i>
+    </div>
+
+    <div class="editorAddJumbotron animated flipInX">
+    <i class="fa fa-plus"></i>
+    </div>
+
+  </div>
+  <!-- end editor -->
+
+<!-- EDITOR BAR RIGHT -->
+
+  <div class="editorCloseRight animated slideInRight">
+  <i class="fa fa-angle-right"></i>
+  </div>
+
+  <div class="editorOpenRight animated fadeIn">
+  <i class="fa fa-angle-left"></i>
+  </div>
+
+  <div class="h1-selected animated infinite flash">
+  H1
+  </div>
+
+  <!-- EDITOR BAR RIGHT  - H1-->
+  <div id="editorRight" class="animated slideInRight">
+
+  <div class="editorBox">
+  <div class="alignMeLeft">
+  <i class="fa fa-align-left"></i>
+  </div>
+  </div>
+
+  <div class="editorBox row-2">
+  <div class="alignMeCenter">
+  <i class="fa fa-align-center"></i>
+  </div>
+  </div>
+
+  <div class="editorBox row-3">
+  <div class="alignMeRight">
+  <i class="fa fa-align-right"></i>
+  </div>
+  </div>
+
+  <div class="editorBox row-4">
+  <div class="boldMe animated flipInX">
+  <i class="fa fa-bold"></i>
+  </div>
+  </div>
+
+  <div class="editorBoxRegular">
+  <div class="regularMe animated flipInX">
+  <i class="fa fa-undo"></i>
+  </div>
+  </div>
+
+  <div class="editorBox row-5">
+  <input type="hidden" id="h1" class="" data-control="wheel" value="#0FFADC">
+  </div>
+
+  <div class="editorBox row-6">
+  <i class="fa fa-font"></i>
+  </div>
+
+  <div class="editorBoxOff">
+  <i class="fa fa-font"></i>
+  </div>
+
+  <div id="browseFonts" class="animated fadeIn">
+  <input id="font" type="text">
+  </div>
+
+  <div id="plus-minus" class="animated fadeIn">
+
+  <div class="plusFont">
+  <i class="fa fa-plus"></i>
+  </div>
+
+  <div class="minusFont">
+  <i class="fa fa-minus"></i>
+  </div>
+
+  </div>
+  <!-- end plus-minus-->
+
+  </div>
+  <!-- end editorRight -->
+
+
+  <!-- flashing h2-editor -->
+  <div class="h2-selected animated infinite flash">
+  H2
+  </div>
+
+  <!-- EDITOR BAR RIGHT  - H2-->
+  <div id="editorRightH2" class="animated slideInRight">
+
+    <div class="editorBox">
+    <div class="alignMeLeft-h2">
+    <i class="fa fa-align-left"></i>
+    </div>
+    </div>
+
+    <div class="alignMeCenter-h2 row-2">
+    <i class="fa fa-align-center"></i>
+    </div>
+
+    <div class="alignMeRight-h2 row-3">
+    <i class="fa fa-align-right"></i>
+    </div>
+
+  </div>
+  <!-- end editorRightH2 -->
+
+</body>
+</html>
