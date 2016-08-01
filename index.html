@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 
-    <title>MadeSmart</title>
+    <title>Hallo. Made.</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
     <link href="css/styles.css" rel="stylesheet">
-    <link href="css/magic.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/fontselect.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,500,700" rel="stylesheet">
 
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/b611e09f3f.js"></script>
@@ -28,17 +24,14 @@
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
     <!-- MiniColors -->
-    <script src="js/jquery.minicolors.js"></script>
-    <link rel="stylesheet" href="css/jquery.minicolors.css">
+    <!-- <script src="js/jquery.minicolors.js"></script>
+    <link rel="stylesheet" href="css/jquery.minicolors.css"> -->
 
-    <!-- ANGULAR JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="js/app.js"></script>
-
+    <!-- The Editor -->
+    <script src="js/editor.js"></script>
 
   </head>
-  <body ng-app="myApp">
+  <body>
 
     <!-- Brand + Nav -->
 
@@ -72,8 +65,15 @@
     </div><!-- /.container-fluid -->
   </nav>
 
+<!-- THE EDITOR -->
+
+<div id="theEditor">
+
+</div>
+
 <!-- THE CONTENT -->
 
+<div id="content">
 <!-- HEADER -->
 <div id="header" class="colourChosen">
 <!-- HEADER IMAGE-->
@@ -83,15 +83,13 @@
 <div class="jumbotron">
   <div class="container">
 
-    <div class="main" ng-controller="MainController">
-    <h1 id="h1" class="h1colour">{{ title }}</h1>
-    </div>
+    <h1 id="h1" class="h1colour">The Header</h1>
 
-    <h2 class="subtitle">
+    <h2 id="#h2" class="subtitle h2colour">
     Get a Site in seconds.
     </h2>
 
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Button</a></p>
+    <p><a class="btn btn-primary btn-lg" id="buttonJumbotron" href="#" role="button">Button</a></p>
 
   </div>
 </div>
@@ -99,36 +97,85 @@
 
 </div>
 <!-- end header -->
+</div>
+<!-- end content -->
 
 <!-- SECTION 2 -->
-<div id="section-2">
+<section>
 
   <div class="container">
 
-    <h2>About</h2>
-    <p class="the-title-2">The Grid</p>
+    <h3>The Grid</h3>
 
     <div class="row">
 
       <div class="col-md-4">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>
+      You can use this only-text section to write about yourself or your business. Easily manage the number of columns as a grid. It's mobile-ready and Responsive.
+     </p>
       </div>
 
       <div class="col-md-4">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>
+      It feels like magic. This Grid adapts the columns on smaller devices and automates the design for mobile. The result is a Beautiful website unique to you, in seconds.
+      </p>
       </div>
 
       <div class="col-md-4">
+      <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
       </div>
 
     </div>
 
   </div>
 <!-- end container -->
-</div>
-<!-- end section-2 -->
+</section>
+<!-- end The Grid section -->
 
+<!-- The Carousel -->
+
+<section>
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="http://wallpapercave.com/wp/Cr69tPt.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://dossierjournal.com/blog/wp-content/uploads/2013/01/FOREST.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</section>
+<!-- end The Carousel section -->
 
 <!-- UI Footer -->
 
@@ -153,9 +200,6 @@
 </div>
 </div>
 </div>
-
-<!-- THE EDITOR -->
-<div ng-include="'editor.html'"></div>
 
 <!-- JS The Builder before jQuery _ jQuery UI -->
 <script src="js/metabuilder.js"></script>

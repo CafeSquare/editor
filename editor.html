@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  </head>
-  <body>
-
-
 <!-- EDITOR BAR LEFT -->
 
-    <div class="editorClose animated slideInLeft">
-    <i class="fa fa-angle-left"></i>
-    </div>
+    <div class="editorClose animated slideInLeft"><i class="fa fa-angle-left"></i></div>
 
     <div class="editorOpen animated fadeIn">
     <i class="fa fa-angle-right"></i>
@@ -49,7 +40,7 @@
     <div id="slider" data-wjs-element="header"></div>
     <div id="box-slider"></div>
 
-    <div class="editortrash">
+    <div class="editortrash animated flipInX">
     <i class="fa fa-trash-o"></i>
     </div>
 
@@ -74,35 +65,35 @@
   H1
   </div>
 
-  <!-- EDITOR BAR RIGHT  - H1-->
+  <!-- EDITOR BAR RIGHT  -  H1 -->
   <div id="editorRight" class="animated slideInRight">
 
-  <div class="editorBox">
+  <div class="editorLeftH1">
   <div class="alignMeLeft">
   <i class="fa fa-align-left"></i>
   </div>
   </div>
 
-  <div class="editorBox row-2">
+  <div class="editorCenterH1">
   <div class="alignMeCenter">
   <i class="fa fa-align-center"></i>
   </div>
   </div>
 
-  <div class="editorBox row-3">
+  <div class="editorRightH1">
   <div class="alignMeRight">
   <i class="fa fa-align-right"></i>
   </div>
   </div>
 
-  <div class="editorBox row-4">
-  <div class="boldMe animated flipInX">
+  <div class="editorBoxBoldH1">
+  <div class="boldMe">
   <i class="fa fa-bold"></i>
   </div>
   </div>
 
-  <div class="editorBoxRegular">
-  <div class="regularMe animated flipInX">
+  <div class="editorBoxRegularH1">
+  <div class="regularMe">
   <i class="fa fa-undo"></i>
   </div>
   </div>
@@ -139,31 +130,57 @@
   </div>
   <!-- end editorRight -->
 
+  <div class="editorCloseRightH2 animated slideInRight">
+  <i class="fa fa-angle-right"></i>
+  </div>
+
+  <div class="editorOpenRightH2 animated fadeIn">
+  <i class="fa fa-angle-left"></i>
+  </div>
+
 
   <!-- flashing h2-editor -->
   <div class="h2-selected animated infinite flash">
   H2
   </div>
 
-  <!-- EDITOR BAR RIGHT  - H2-->
+  <!-- EDITOR BAR RIGHT  -  H2 -->
+
   <div id="editorRightH2" class="animated slideInRight">
 
-    <div class="editorBox">
-    <div class="alignMeLeft-h2">
-    <i class="fa fa-align-left"></i>
-    </div>
-    </div>
+  <div class="editorBox">
+  <div class="alignMeLeftH2">
+  <i class="fa fa-align-left"></i>
+  </div>
+  </div>
 
-    <div class="alignMeCenter-h2 row-2">
-    <i class="fa fa-align-center"></i>
-    </div>
+  <div class="editorBox row-2">
+  <div class="alignMeCenterH2">
+  <i class="fa fa-align-center"></i>
+  </div>
+  </div>
 
-    <div class="alignMeRight-h2 row-3">
-    <i class="fa fa-align-right"></i>
-    </div>
+  <div class="editorBox row-3">
+  <div class="alignMeRightH2">
+  <i class="fa fa-align-right"></i>
+  </div>
+  </div>
+
+  <div class="editorBoxBoldH2 row-4 animated flipInX">
+  <div class="boldMeH2">
+  <i class="fa fa-bold"></i>
+  </div>
+  </div>
+
+  <div class="editorBoxRegularH2 animated flipInX">
+  <div class="regularMeH2">
+  <i class="fa fa-undo"></i>
+  </div>
+  </div>
+
+  <div class="editorBox row-5">
+  <input type="hidden" id="h2" class="" data-control="wheel" value="#0FFADC">
+  </div>
 
   </div>
   <!-- end editorRightH2 -->
-
-</body>
-</html>

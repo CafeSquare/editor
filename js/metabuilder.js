@@ -39,6 +39,13 @@ $(function(){
     $('h1').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
+// EDITABLE H3
+
+$(function(){
+    var $div=$('h3'), isEditable=$div.is('.editable');
+    $('h3').prop('contenteditable',!isEditable).toggleClass('editable');
+})
+
 // EDITABLE TEXT JUMBOTRON.
 
 $(function(){
@@ -58,6 +65,13 @@ $(function(){
 $(function(){
     var $div=$('.navbar-brand'), isEditable=$div.is('.editable');
     $('.navbar-brand').prop('contenteditable',!isEditable).toggleClass('editable');
+})
+
+// EDITABLE COLUMNS
+
+$(function(){
+    var $div=$('.col-md-4'), isEditable=$div.is('.editable');
+    $('.col-md-4').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
 // SLIDER OPACITY.
@@ -119,10 +133,12 @@ $('.editorClose').css ('display', 'block');
 // TRIGGER EDITOR RIGHT OFF  > //
 
 $('.editorCloseRight').click(function() {
+$('#editorRightH2').css ('display', 'none');
 $('#editorRight').removeClass ('slideInRight');
 $('#editorRight').addClass ('slideOutRight');
 $('.editorOpenRight').css ('display', 'block');
 $('.editorCloseRight').css ('display', 'none');
+$('.h1-selected').css ('display', 'none');
 });
 
 // TRIGGER EDITOR RIGHT ON  < //
@@ -132,6 +148,28 @@ $('#editorRight').removeClass ('slideOutRight');
 $('#editorRight').addClass ('slideInRight');
 $('.editorOpenRight').css ('display', 'none');
 $('.editorCloseRight').css ('display', 'block');
+$('.h1-selected').css ('display', 'block');
+});
+
+// TRIGGER EDITOR RIGHT OFF  > //
+
+$('.editorCloseRightH2').click(function() {
+$('#editorRight').css ('display', 'none');
+$('#editorRightH2').removeClass ('slideInRight');
+$('#editorRightH2').addClass ('slideOutRight');
+$('.editorOpenRightH2').css ('display', 'block');
+$('.editorCloseRightH2').css ('display', 'none');
+$('.h2-selected').css ('display', 'none');
+});
+
+// TRIGGER EDITOR RIGHT ON  < //
+
+$('.editorOpenRightH2').click(function() {
+$('#editorRightH2').removeClass ('slideOutRight');
+$('#editorRightH2').addClass ('slideInRight');
+$('.editorOpenRightH2').css ('display', 'none');
+$('.editorCloseRightH2').css ('display', 'block');
+$('.h2-selected').css ('display', 'block');
 });
 
 // COLOR PICKER
@@ -157,6 +195,18 @@ var newCol = $(this).parent().find('.minicolors-swatch-color').attr('style');
 
 // USE CSS NOT ATTRIB
 $('.h1colour').css("color", newCol);
+});
+
+// H2 COLOUR
+
+$('#h2').minicolors()
+
+$("#h2").on('change', function() {
+//var newCol = $(this).parent().find('.minicolors-swatch-color').css("color");
+var newCol = $(this).parent().find('.minicolors-swatch-color').attr('style');
+
+// USE CSS NOT ATTRIB
+$('.h2colour').css("color", newCol);
 });
 
 
@@ -186,7 +236,7 @@ $('.editortrash').css('display', 'block');
 // DELETE JUMBOTRON.
 
 $('.editortrash').click(function() {
-$('.jumbotron').show().delay(200).fadeOut();
+$('.jumbotron').show().delay(500).fadeOut();
 $('.editorAddJumbotron').css('display', 'block');
 $('.editortrash').css('display', 'none');
 });
@@ -234,14 +284,21 @@ $(function() {
 
         $("#editorRight").css("display","block");
         $("#editorRightH2").css("display","none");
+        $(".editorCloseRight").css("display","block");
+        $(".editorOpenRightH2").css("display","none");
+        $(".editorCloseRightH2").css("display","none");
 
         $(".h1-selected").css("display","block");
         $(".h2-selected").css("display","none");
 
+        $("#editorRight").addClass("animated slideInRight");
+        $("#editorRightH2").removeClass("animated slideOutRight");
         $(".editorBox").addClass("animated slideInRight");
-        $('.editorCloseRight').css("display","block");
 
-        $('.regularMe').css("display","none");
+        // none of the editorBoxes apart of the BOLD option
+        $(".editorBoxBold").css("display","block");
+        $(".editorBoxRegularH2").css("display","none");
+        $(".editorBoxRegular").css("display","none");
 
 
     });
@@ -254,54 +311,40 @@ $(function() {
 
         $("#editorRightH2").css("display","block");
         $("#editorRight").css("display","none");
+        $(".editorOpenRight").css("display","none");
+        $(".editorCloseRight").css("display","none");
+        $(".editorCloseRightH2").css("display","block");
 
-        $(".h1-selected").css("display","none");
         $(".h2-selected").css("display","block");
+        $(".h1-selected").css("display","none");
 
-        $(".editorBox").addClass("animated slideInRight");
-        $('.editorCloseRight').css("display","block");
+        $("#editorRightH2").addClass("animated slideInRight");
+        $("#editorRight").removeClass("animated slideOutRight");
 
-
-        /* $(".alignMeLeft").css("display","none");
-        $(".alignMeCenter").css("display","none");
-        $(".alignMeRight").css("display","none");
-        $(".alignMeLeft-h2").css("display","block");
-        $(".alignMeCenter-h2").css("display","block");
-        $(".alignMeRight-h2").css("display","block");
-        $(".boldMe-h2").css("display","block");
-        $(".boldMe").css("display","none");
-        $(".regularMe-h2").css("display","none");
-        $(".regularMe").css("display","none"); */
-  });
-});
-
-// H1 EDITOR.
-
-/* $(function() {
-    $("h1").focus( function() {
-        $(".h1-selected").css("display","block");
-        $(".h2-selected").css("display","none");
-
-        $("#editorRightH2").css("display","none");
-        $("#editorRight").css("display","block");
-
-
-        $(".alignMeLeft").css("display","block");
-        $(".alignMeCenter").css("display","block");
-        $(".alignMeRight").css("display","block");
-        $(".alignMeLeft-h2").css("display","none");
-        $(".alignMeCenter-h2").css("display","none");
-        $(".alignMeRight-h2").css("display","none");
-
+        // none of the editorBoxes apart of the BOLD option
+        $(".editorBoxBoldH2").css("display","block");
+        $(".boldMeH2").css("display","block");
+        $(".editorBoxRegularH2").css("display","none");
         $(".editorBoxRegular").css("display","none");
 
-        $(".boldMe").css("display","block");
-        $(".regularMe").css("display","none");
-        $(".boldMe-h2").css("display","none");
-        $(".regularMe-h2").css("display","none");
-  });
+    });
 });
-*/
+
+// buttonJumbotron EDITOR
+
+$(function() {
+    $("#buttonJumbotron").focus( function() {
+
+    $("#buttonJumbotron").after( '<div class="deleteJumbotron"><i class="fa fa-trash-o small-trash"></i></div>' );
+    $(".deleteJumbotron").css("display", "block");
+
+    });
+});
+
+$('.deleteJumbotron').click(function() {
+$("#buttonJumbotron").css("display", "none");
+});
+
 
 // H1/H2 ALIGNMENT + FONT WEIGHT
 
@@ -309,61 +352,56 @@ $('.alignMeLeft').click(function() {
 $("h1").css("text-align", "left");
 });
 
+$('.alignMeLeftH2').click(function() {
+$("h2").css("text-align", "left");
+});
+
 $('.alignMeRight').click(function() {
 $("h1").css("text-align", "right");
+});
+
+$('.alignMeRightH2').click(function() {
+$("h2").css("text-align", "right");
 });
 
 $('.alignMeCenter').click(function() {
 $("h1").css("text-align", "center");
 });
 
-$('.alignMeLeft-h2').click(function() {
-$("h2").css("text-align", "left");
-});
-
-$('.alignMeRight-h2').click(function() {
-$("h2").css("text-align", "right");
-});
-
-$('.alignMeCenter-h2').click(function() {
+$('.alignMeCenterH2').click(function() {
 $("h2").css("text-align", "center");
 });
 
-$('.boldMe').click(function() {
+$('.editorBoxBold').click(function() {
 $('h1').css ('font-weight', '700');
-$('.regularMe').css ('display', 'block');
-$('.BoldMe').css ('display', 'none');
-});
-
-$('.regularMe').click(function() {
-$('h1').css ('font-weight', '500');
-$('.regularMe').css ('display', 'none');
-$('.BoldMe').css ('display', 'block');
-});
-
-$('.boldMe-h2').click(function() {
-$('h2').css ('font-weight', '700');
-$('.regularMe-h2').css ('display', 'block');
-$('.boldMe-h2').css ('display', 'none');
-});
-
-$('.regularMe-h2').click(function() {
-$('h2').css ('font-weight', '500');
-$('.boldMe-h2').css ('display', 'block');
-$('.regularMe-h2').css ('display', 'none');
-});
-
-// H1 BOLD - REGULAR SELECTOR
-
-$('.editorBox.row-4').click(function() {
-$('.editorBox.row-4').css ('display', 'none');
 $('.editorBoxRegular').css ('display', 'block');
+$('.regularMe').css ('display', 'block');
+$('.editorBoxBold').css ('display', 'none');
+$('.editorBoxBold').css ('display', 'none');
 });
 
 $('.editorBoxRegular').click(function() {
-$('.editorBox.row-4').css ('display', 'block');
-$('.editorBox.row-4').removeClass ('slideInRight');
+$('h1').css ('font-weight', '400');
 $('.editorBoxRegular').css ('display', 'none');
+$('.regularMe').css ('display', 'none');
+$('.boldMe').css ('display', 'block');
+$('.editorBoxBold').css ('display', 'block');
+});
+
+$('.editorBoxBoldH2').click(function() {
+$('h2').css ('font-weight', '700');
+$('.regularMeH2').css ('display', 'block');
+$('.editorBoxRegularH2').css ('display', 'block');
+$('.editorBoxBoldH2').css ('display', 'none');
+$('.boldMeH2').css ('display', 'none');
+});
+
+$('.editorBoxRegularH2').click(function() {
+$('h2').css ('font-weight', '400');
+$('.boldMeH2').css ('display', 'block');
+$('.editorBoxBoldH2').css ('display', 'block');
+$('.editorBoxRegularH2').css ('display', 'none');
+$('.regularMeH2').css ('display', 'none');
 });
 
 

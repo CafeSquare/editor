@@ -1,13 +1,36 @@
-body {
-font-family: 'Raleway', sans-serif;
-}
+@import 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700';
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+
 
 a:link, a:visited, a:hover, a:active {
 text-decoration:none;
 }
 
+h1 {
+font-size: 4em;
+font-weight: 400;
+font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+font-size: 3em;
+font-weight: 400;
+font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+text-align: center;
+font-size: 3em;
+font-weight: 400;
+font-family: 'Montserrat', sans-serif;
+margin-bottom: 1em;
+}
+
 p {
-font-size: 2rem;
+font-family: 'Work Sans', sans-serif;
+font-size:18px;
+line-height: 30px;
+font-weight:300;
 }
 
 /*
@@ -20,12 +43,17 @@ font-size: 2rem;
 background: rgba(255, 255, 255, 0.7);
 }
 
-.content {
+.container-header {
 width: 100%;
 }
 
 #brand-name {
 font-weight: 300;
+}
+
+#content {
+width: 100%;
+height: auto;
 }
 
 #header {
@@ -35,7 +63,7 @@ z-index: 1;
 width: 100%;
 height: auto;
 overflow: hidden;
-background: rgba(60, 60, 80, 0.9);
+background: rgba(50, 50, 70, 0.95);
 }
 
 .subtitle {
@@ -72,7 +100,16 @@ h2.subtitle:focus {
 outline: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
+h3:focus {
+outline: 1px dashed rgba(0, 0, 0, 0.3);
+}
+
+.col-md-4:focus {
+outline: 1px dashed rgba(0, 0, 0, 0.3);
+}
+
 #UIFooter {
+display: none;
 position: fixed;
 bottom:0;
 z-index: 888;
@@ -104,15 +141,6 @@ letter-spacing: 2px;
 transition-duration: 1s;
 background: rgb(50, 50, 70);
 color: rgb(15, 250, 220);
-}
-
-#section-2 {
-position: relative;
-width: 100%;
-height: auto;
-overflow: hidden;
-background-color: #f5f5f5;
-z-index:1;
 }
 
 
@@ -192,8 +220,6 @@ margin-bottom: 0;
 .jumbotron h1 {
 padding: 4px 0;
 text-align: center;
-font-size: 4em;
-font-weight: 500;
 color:#fff;
 }
 
@@ -264,6 +290,11 @@ color:#fff;
 ========================================================
 */
 
+#containerEditor {
+width: 100%;
+height: 100%;
+}
+
 #editor {
 position: absolute;
 left:0;
@@ -271,6 +302,16 @@ top:8.25em;
 width:5em;
 z-index: 3;
 border:0;
+}
+
+.editor {
+position: absolute;
+left:0;
+top:8.25em;
+width:5em;
+z-index: 3;
+border:0;
+background: rgba(50, 50, 70, 0.7);
 }
 
 .editorClose {
@@ -322,6 +363,14 @@ height: 5em;
 background: rgba(50, 50, 70, 0.9);
 }
 
+.browse {
+float: left;
+cursor: pointer;
+width:100%;
+height: 5em;
+background: rgba(50, 50, 70, 0.7);
+}
+
 .inputFileContainer {
 padding:1.8em;
 }
@@ -370,6 +419,14 @@ background: rgba(50, 50, 70, 0.9);
 transition-duration: 1s;
 }
 
+.editorLeftH1, .editorCenterH1, .editorRightH1  {
+float: left;
+cursor: pointer;
+width:100%;
+height: 5em;
+background: rgba(50, 50, 70, 0.7);
+}
+
 /*
 ========================================================
 03.1 EDITOR RIGHT
@@ -382,6 +439,16 @@ left:0;
 top:8.25em;
 width:5em;
 z-index: 3;
+border:0;
+}
+
+.editorRight {
+position: absolute;
+right:0;
+top:8.25em;
+width:5em;
+background: rgba(50, 50, 70, 0.9);
+z-index: 999;
 border:0;
 }
 
@@ -405,22 +472,6 @@ width:5em;
 background: rgba(50, 50, 70, 0.9);
 z-index: 999;
 border:0;
-}
-
-.alignMeLeft-h2, .alignMeCenter-h2, .alignMeRight-h2 {
-display: none;
-position:absolute;
-z-index:2;
-}
-
-.boldMe, .regularMe {
-position:absolute;
-z-index:999;
-}
-
-.boldMe-h2, .regularMe-h2 {
-position:absolute;
-z-index:999;
 }
 
 .h1-selected {
@@ -457,7 +508,7 @@ color: rgba(255, 255, 255, 1);
 padding: 11px;
 }
 
-.editorBox {
+.editorBox, .editorBoxBold, .editorBoxBoldH2 {
 cursor: pointer;
 position: absolute;
 top:0;
@@ -488,7 +539,7 @@ background: rgba(50, 50, 70, 0.9);
 z-index: 3;
 }
 
-.editorBoxRegular {
+.editorBoxRegular, .editorBoxRegularH2 {
 display: none;
 cursor: pointer;
 position: absolute;
@@ -579,7 +630,7 @@ position: absolute;
 z-index:999;
 }
 
-.editorCloseRight {
+.editorCloseRight, .editorCloseRightH2 {
 position:absolute;
 top:6em;
 right: 0;
@@ -592,7 +643,7 @@ background: rgba(50, 50, 70, 0.9);
 z-index:8;
 }
 
-.editorOpenRight {
+.editorOpenRight, .editorOpenRightH2 {
 position:absolute;
 top:6em;
 right: 0;
@@ -620,6 +671,26 @@ max-width: 100%;
 
 /*
 ========================================================
+03.3 BUTTON JUMBOTRON
+========================================================
+*/
+
+#buttonJumbotron {
+}
+
+.deleteJumbotron {
+cursor: pointer;
+display: none;
+margin: 0 auto;
+position: relative;
+top:.5em;
+width: 2em;
+height: 2em;
+background: rgba(50, 50, 70, 0.8);
+}
+
+/*
+========================================================
 04. FONT AWESOME STYLING
 ========================================================
 */
@@ -628,6 +699,12 @@ i.fa.fa-trash-o {
 color:#fff;
 font-size:2em;
 padding:22px;
+}
+
+.small-trash {
+color:#fff;
+font-size:1em !important;
+padding:10px !important;
 }
 
 i.fa.fa-plus {
@@ -949,6 +1026,18 @@ margin:6px 0 !important;
 .font-select .fs-results li:hover {
 background: rgb(15, 250, 220) !important;
 }
+
+/*
+========================================================
+10. SECTION THE GRID
+========================================================
+*/
+
+section {
+background: #fff;
+padding: 3em;
+}
+
 
 /*
 ========================================================
