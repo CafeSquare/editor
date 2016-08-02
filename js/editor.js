@@ -8,24 +8,107 @@ $(editor).append("<div class='editor'>\
 <div class='editorImages'></div>\
 <div class='editorImagesClose'></div>\
 <div class='browse'></div>\
-<div class='editorOpacity'></div>\
-<div class='editorOpacityOff'></div>\
-<div id='slider' data-wjs-element='header'></div>\
-<div id='box-slider'></div>\
 <div class='editortrash animated flipInX'></div>\
 <div class='editorAddJumbotron animated flipInX'></div>\
 </div>");
 
 // editor right
-$(editor).append("<div class='editorRight'>\
-<div class='editorLeftH1'></div>\
-<div class='editorCenterH1'></div>\
-<div class='editorRightH1'></div>\
+$(editor).append("<div id='editorRight'>\
+<div class='h1-selected animated infinite flash'>H1</div>\
+<div class='alignMeLeft'><i class='fa fa-align-left'></i></div>\
+<div class='alignMeCenter'><i class='fa fa-align-center'></i></div>\
+<div class='alignMeRight'><i class='fa fa-align-right'></i></div>\
+<div class='editorBoxBold animated flipInX'><i class='fa fa-bold'></i></div>\
+<div class='editorBoxRegular animated flipInX'><i class='fa fa-undo'></i></div>\
 </div>");
+
+// H1 EDITOR.
+
+$(function() {
+    $("h1").focus( function() {
+
+        $("#editorRight").css("display","block");
+        $("#editorRightH2").css("display","none");
+        $(".editorCloseRight").css("display","block");
+        $(".editorOpenRightH2").css("display","none");
+        $(".editorCloseRightH2").css("display","none");
+
+        $(".h1-selected").css("display","block");
+        $(".h2-selected").css("display","none");
+
+        $("#editorRight").addClass("animated slideInRight");
+        $("#editorRightH2").removeClass("animated slideOutRight");
+        $(".editorBox").addClass("animated slideInRight");
+
+        // none of the editorBoxes apart of the BOLD option
+        $(".editorBoxBold").css("display","block");
+        $(".editorBoxRegularH2").css("display","none");
+        $(".editorBoxRegular").css("display","none");
+
+
+    });
+});
+
+// H1/H2 ALIGNMENT + FONT WEIGHT
+
+$('.alignMeLeft').click(function() {
+$("h1").css("text-align", "left");
+});
+
+$('.alignMeLeftH2').click(function() {
+$("h2").css("text-align", "left");
+});
+
+$('.alignMeRight').click(function() {
+$("h1").css("text-align", "right");
+});
+
+$('.alignMeRightH2').click(function() {
+$("h2").css("text-align", "right");
+});
+
+$('.alignMeCenter').click(function() {
+$("h1").css("text-align", "center");
+});
+
+$('.alignMeCenterH2').click(function() {
+$("h2").css("text-align", "center");
+});
+
+$('.editorBoxBold').click(function() {
+$('h1').css ('font-weight', '700');
+$('.editorBoxRegular').css ('display', 'block');
+$('.regularMe').css ('display', 'block');
+$('.editorBoxBold').css ('display', 'none');
+$('.editorBoxBold').css ('display', 'none');
+});
+
+$('.editorBoxRegular').click(function() {
+$('h1').css ('font-weight', '400');
+$('.editorBoxRegular').css ('display', 'none');
+$('.regularMe').css ('display', 'none');
+$('.boldMe').css ('display', 'block');
+$('.editorBoxBold').css ('display', 'block');
+});
+
+$('.editorBoxBoldH2').click(function() {
+$('h2').css ('font-weight', '700');
+$('.regularMeH2').css ('display', 'block');
+$('.editorBoxRegularH2').css ('display', 'block');
+$('.editorBoxBoldH2').css ('display', 'none');
+$('.boldMeH2').css ('display', 'none');
+});
+
+$('.editorBoxRegularH2').click(function() {
+$('h2').css ('font-weight', '400');
+$('.boldMeH2').css ('display', 'block');
+$('.editorBoxBoldH2').css ('display', 'block');
+$('.editorBoxRegularH2').css ('display', 'none');
+$('.regularMeH2').css ('display', 'none');
+});
 
 // editor IN
 $('.editor').addClass ('animated slideInLeft');
-$('.editorRight').addClass ('animated slideInRight');
 
 // editor images
 $(".editorImages").append('<i class="fa fa-camera"></i>');
@@ -50,29 +133,15 @@ $('.editorImages').css('display', 'block');
 
 // editor upload images //
 $(".browse").append('<label class="fileUpload">\
-<input id="uploadBtn" type="file" class="upload" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);" />\
+<input id="uploadBtn" type="file" class="upload" accept="image/*" onchange="readURL(this);" />\
 <span class="uploadBtn">Upload</span>\
 </label>\
 ');
 
+
 // editor opacity
 $(".editorOpacity").append('<i class="fa fa-adjust"></i>');
 $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
-
-// SLIDER OPACITY.
-
-    $(document).ready(function() {
-        //Step 1: set up the slider with some options. The valid values for opacity are 0 to 1
-        //Step 2: Bind an event so when you slide the slider and stop, the following function gets called
-        $('#slider').slider({ min: 0, max: 1, step: 0.1, value: 1 })
-            .bind("slidechange", function() {
-                //get the value of the slider with this call
-                var o = $(this).slider('value');
-                //the element to change with an attribute
-                var e = '#' + $(this).data('wjs-element');
-                $(e).css('background-color', 'rgba(0, 0, 0, ' + o + ')');
-            });
-    });
 
     // OPACITY SLIDER ON //
 
@@ -100,7 +169,7 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $(".editortrash").append('<i class="fa fa-trash-o"></i>');
     $(".editorAddJumbotron").append('<i class="fa fa-plus"></i>');
 
-    // DELETE JUMBOTRON.
+    // delete jumbotron
 
     $('.editortrash').click(function() {
     $('.jumbotron').show().delay(500).fadeOut();
@@ -108,7 +177,7 @@ $(".editorOpacityOff").append('<i class="fa fa-adjust"></i>');
     $('.editortrash').css('display', 'none');
     });
 
-    // ADD JUMBOTRON.
+    // add jumbotron
 
     $('.editorAddJumbotron').click(function() {
     $('.jumbotron').show().delay(500).fadeIn();

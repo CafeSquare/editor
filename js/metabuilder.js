@@ -173,51 +173,6 @@ $('div.minicolors.minicolors-theme-default').removeClass ('minicolors-position-r
 $('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-left');
 });
 
-
-// UPLOAD IMAGE
-
-function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#header-image')
-                    .attr('src', e.target.result)
-                    .width('100%')
-                    .height('auto');
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-// H1 EDITOR.
-
-$(function() {
-    $("h1").focus( function() {
-
-        $("#editorRight").css("display","block");
-        $("#editorRightH2").css("display","none");
-        $(".editorCloseRight").css("display","block");
-        $(".editorOpenRightH2").css("display","none");
-        $(".editorCloseRightH2").css("display","none");
-
-        $(".h1-selected").css("display","block");
-        $(".h2-selected").css("display","none");
-
-        $("#editorRight").addClass("animated slideInRight");
-        $("#editorRightH2").removeClass("animated slideOutRight");
-        $(".editorBox").addClass("animated slideInRight");
-
-        // none of the editorBoxes apart of the BOLD option
-        $(".editorBoxBold").css("display","block");
-        $(".editorBoxRegularH2").css("display","none");
-        $(".editorBoxRegular").css("display","none");
-
-
-    });
-});
-
 // H2 EDITOR.
 
 $(function() {
@@ -259,64 +214,22 @@ $('.deleteJumbotron').click(function() {
 $("#buttonJumbotron").css("display", "none");
 });
 
+// UPLOAD IMAGE
 
-// H1/H2 ALIGNMENT + FONT WEIGHT
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-$('.alignMeLeft').click(function() {
-$("h1").css("text-align", "left");
-});
+            reader.onload = function (e) {
+                $('#header-image')
+                    .attr('src', e.target.result)
+                    .width('100%')
+                    .height('auto');
+            };
 
-$('.alignMeLeftH2').click(function() {
-$("h2").css("text-align", "left");
-});
-
-$('.alignMeRight').click(function() {
-$("h1").css("text-align", "right");
-});
-
-$('.alignMeRightH2').click(function() {
-$("h2").css("text-align", "right");
-});
-
-$('.alignMeCenter').click(function() {
-$("h1").css("text-align", "center");
-});
-
-$('.alignMeCenterH2').click(function() {
-$("h2").css("text-align", "center");
-});
-
-$('.editorBoxBold').click(function() {
-$('h1').css ('font-weight', '700');
-$('.editorBoxRegular').css ('display', 'block');
-$('.regularMe').css ('display', 'block');
-$('.editorBoxBold').css ('display', 'none');
-$('.editorBoxBold').css ('display', 'none');
-});
-
-$('.editorBoxRegular').click(function() {
-$('h1').css ('font-weight', '400');
-$('.editorBoxRegular').css ('display', 'none');
-$('.regularMe').css ('display', 'none');
-$('.boldMe').css ('display', 'block');
-$('.editorBoxBold').css ('display', 'block');
-});
-
-$('.editorBoxBoldH2').click(function() {
-$('h2').css ('font-weight', '700');
-$('.regularMeH2').css ('display', 'block');
-$('.editorBoxRegularH2').css ('display', 'block');
-$('.editorBoxBoldH2').css ('display', 'none');
-$('.boldMeH2').css ('display', 'none');
-});
-
-$('.editorBoxRegularH2').click(function() {
-$('h2').css ('font-weight', '400');
-$('.boldMeH2').css ('display', 'block');
-$('.editorBoxBoldH2').css ('display', 'block');
-$('.editorBoxRegularH2').css ('display', 'none');
-$('.regularMeH2').css ('display', 'none');
-});
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
 
 // FONT SELECTOR

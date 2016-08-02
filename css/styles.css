@@ -48,7 +48,8 @@ width: 100%;
 }
 
 #brand-name {
-font-weight: 300;
+font-weight: 400;
+font-family: 'Montserrat', sans-serif;
 }
 
 #content {
@@ -64,6 +65,7 @@ width: 100%;
 height: auto;
 overflow: hidden;
 background: rgba(50, 50, 70, 0.95);
+opacity: 1;
 }
 
 .subtitle {
@@ -311,7 +313,6 @@ top:8.25em;
 width:5em;
 z-index: 3;
 border:0;
-background: rgba(50, 50, 70, 0.7);
 }
 
 .editorClose {
@@ -346,7 +347,7 @@ height: 5em;
 background: rgba(50, 50, 70, 0.7);
 }
 
-.editorImages {
+.editorImages, .editorVideos {
 float: left;
 cursor: pointer;
 width:100%;
@@ -354,7 +355,7 @@ height: 5em;
 background: rgba(50, 50, 70, 0.7);
 }
 
-.editorImagesOpen, .editorImagesClose {
+.editorImagesClose, .editorVideosClose {
 display: none;
 float: left;
 cursor: pointer;
@@ -367,6 +368,17 @@ background: rgba(50, 50, 70, 0.9);
 display: none;
 position: absolute;
 top: 5em;
+left: 5.1em;
+width: 10em;
+height: 4.95em;
+background: rgba(50, 50, 70, 0.8);
+z-index:5;
+}
+
+.browseVideos {
+display: none;
+position: absolute;
+top: 10em;
 left: 5.1em;
 width: 10em;
 height: 4.95em;
@@ -405,8 +417,6 @@ background: rgba(50, 50, 70, 0.7);
 
 .editorAddJumbotron {
 display: none;
-position: absolute;
-top:15em;
 float: left;
 cursor: pointer;
 width:100%;
@@ -416,18 +426,26 @@ background: rgba(50, 50, 70, 0.7);
 
 .editorImages:hover,
 .editorOpacity:hover,
-.editortrash:hover {
-background: rgba(50, 50, 70, 0.9);
+.editortrash:hover,
+.editorAddJumbotron:hover {
+background: rgba(30, 30, 50, 0.7);
 -webkit-transition-duration: 1s; /* Safari */
 transition-duration: 1s;
 }
 
-.editorLeftH1, .editorCenterH1, .editorRightH1  {
+.alignMeLeft, .alignMeCenter, .alignMeRight  {
 float: left;
 cursor: pointer;
 width:100%;
 height: 5em;
 background: rgba(50, 50, 70, 0.7);
+}
+
+.alignMeLeft:hover, .alignMeCenter:hover, .alignMeRight:hover,
+.editorBoxBold:hover, .editorBoxRegular:hover {
+background: rgba(30, 30, 50, 0.7);
+-webkit-transition-duration: 1s; /* Safari */
+transition-duration: 1s;
 }
 
 /*
@@ -450,7 +468,6 @@ position: absolute;
 right:0;
 top:8.25em;
 width:5em;
-background: rgba(50, 50, 70, 0.9);
 z-index: 999;
 border:0;
 }
@@ -482,11 +499,11 @@ border-radius: 50%;
 display: none;
 cursor: pointer;
 position: absolute;
-top: 4.85em;
+top: 0;
 right: 4.5em;
 width: 2.5em;
 height: 2.5em;
-background: rgba(50, 50, 70, 0.7);
+background: rgba(30, 30, 50, 0.7);
 z-index: 5;
 text-align: right;
 font-size: 1.25em;
@@ -513,20 +530,11 @@ padding: 11px;
 
 .editorBox, .editorBoxBold, .editorBoxBoldH2 {
 cursor: pointer;
-position: absolute;
-top:0;
-right:0;
+float: left;
 color:#fff;
 width:100%;
 height: 5em;
 background: rgba(50, 50, 70, 0.7);
-z-index: 1;
-}
-
-.editorBox:hover, .editorBoxRegular:hover {
-background: rgba(50, 50, 70, 0.9);
--webkit-transition-duration: 1s; /* Safari */
-transition-duration: 1s;
 }
 
 .editorBoxOff {
@@ -545,14 +553,11 @@ z-index: 3;
 .editorBoxRegular, .editorBoxRegularH2 {
 display: none;
 cursor: pointer;
-position: absolute;
-top:15em;
-right:0;
+float: left;
 color:#fff;
 width:100%;
 height: 5em;
 background: rgba(50, 50, 70, 0.7);
-z-index: 3;
 }
 
 .h2-editor {
@@ -724,6 +729,13 @@ padding:23px;
 }
 
 i.fa.fa-camera {
+color:#fff;
+font-size:1.7em;
+padding:22px;
+padding-top: 24px;
+}
+
+i.fa.fa-film {
 color:#fff;
 font-size:1.7em;
 padding:22px;
