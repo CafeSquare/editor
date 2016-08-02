@@ -136,17 +136,6 @@ $('.h2-selected').css ('display', 'block');
 
 // COLOR PICKER
 
-// H1 COLOUR
-
-$('#h1').minicolors()
-
-$("#h1").on('change', function() {
-//var newCol = $(this).parent().find('.minicolors-swatch-color').css("color");
-var newCol = $(this).parent().find('.minicolors-swatch-color').attr('style');
-
-// USE CSS NOT ATTRIB
-$('.h1colour').css("color", newCol);
-});
 
 // H2 COLOUR
 
@@ -158,19 +147,6 @@ var newCol = $(this).parent().find('.minicolors-swatch-color').attr('style');
 
 // USE CSS NOT ATTRIB
 $('.h2colour').css("color", newCol);
-});
-
-
-// POSITIONING MINICOLORS-PANELS
-
-$('.editorBox.row-5').click(function() {
-$('div.minicolors.minicolors-theme-default').removeClass ('minicolors-position-left');
-$('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-right');
-});
-
-$('.editorColors').click(function() {
-$('div.minicolors.minicolors-theme-default').removeClass ('minicolors-position-right');
-$('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-left');
 });
 
 // H2 EDITOR.
@@ -230,63 +206,5 @@ function readURL(input) {
             reader.readAsDataURL(input.files[0]);
         }
     }
-
-
-// FONT SELECTOR
-
-$(function(){
-$('#font').fontselect().change(function(){
-
-  // replace + signs with spaces for css
-  var font = $(this).val().replace(/\+/g, ' ');
-
-  // split font into family and weight
-  font = font.split(':');
-
-  // set family on H1
-  $('h1').css('font-family', font[0]);
-});
-});
-
-$('.font-select > a').click(function() {
-$('.fs-drop').addClass ('animated fadeIn');
-});
-
-// FONT SELECTOR VISIBLE
-
-$('.editorBox.row-6').click(function() {
-$('#browseFonts').css ('display', 'block');
-$('#plus-minus').css ('display', 'block');
-$('.editorBox.row-6').css ('display', 'none');
-$('.editorBoxOff').css ('display', 'block');
-});
-
-$('.editorBoxOff').click(function() {
-$('#browseFonts').css ('display', 'none');
-$('.editorBox.row-6').css ('display', 'block');
-$('.editorBox.row-6').removeClass ('slideInRight');
-$('.editorBoxOff').css ('display', 'none');
-$('#plus-minus').css ('display', 'none');
-});
-
-// FONT SIZE
-
-$('.plusFont').click(function() {
-// The parseInt() function parses a string and returns an integer
-
-  var fontSize = parseInt($("h1").css("font-size"));
-  fontSize = fontSize + 1 + "px";
-  $("h1").css({'font-size':fontSize});
-
-});
-
-$('.minusFont').click(function() {
-// The parseInt() function parses a string and returns an integer
-
-  var fontSize = parseInt($("h1").css("font-size"));
-  fontSize = fontSize - 1 + "px";
-  $("h1").css({'font-size':fontSize});
-
-});
 
 // STORE THE DESIGN

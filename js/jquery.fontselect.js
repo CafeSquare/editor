@@ -25,11 +25,11 @@
       "Pattaya",
       "Parisienne",
       "Questrial",
-	    "Roboto",
+	    "Roboto", 
       "Suez One",
       "Raleway",
       "Roboto Slab",
-      "Times"
+      "Work Sans"
   ];
 
     var settings = {
