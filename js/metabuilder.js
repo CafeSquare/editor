@@ -74,44 +74,6 @@ $(function(){
     $('.col-md-4').prop('contenteditable',!isEditable).toggleClass('editable');
 })
 
-// SLIDER OPACITY.
-
-    $(document).ready(function() {
-        //Step 1: set up the slider with some options. The valid values for opacity are 0 to 1
-        //Step 2: Bind an event so when you slide the slider and stop, the following function gets called
-        $('#slider').slider({ min: 0, max: 1, step: 0.1, value: 1 })
-            .bind("slidechange", function() {
-                //get the value of the slider with this call
-                var o = $(this).slider('value');
-                //the element to change with an attribute
-                var e = '#' + $(this).data('wjs-element');
-                // $(e).css('background-color', 'rgba(0, 0, 0, ' + o + ')');
-                $(e).css('opacity', o);
-            });
-    });
-
-    // OPACITY SLIDER ON //
-
-    $('.editorOpacity').click(function() {
-    $('#box-slider').addClass ('animated fadeIn');
-    $('#box-slider').removeClass ('fadeOut');
-    $('#box-slider').css('display', 'block');
-    $('.editorOpacityOff').css('display', 'block');
-    $('.editorOpacity').css('display', 'none');
-    $('#slider').css('display', 'block');
-    });
-
-    // OPACITY SLIDER OFF //
-
-    $('.editorOpacityOff').click(function() {
-    $('#box-slider').addClass ('fadeOut');
-    $('#box-slider').removeClass ('fadeIn');
-    $('#box-slider').css('display', 'none');
-    $('.editorOpacity').css('display', 'block');
-    $('.editorOpacityOff').css('display', 'none');
-    $('#slider').css('display', 'none');
-    });
-
 // TRIGGER EDITOR OFF  < //
 
 $('.editorClose').click(function() {
@@ -173,17 +135,6 @@ $('.h2-selected').css ('display', 'block');
 });
 
 // COLOR PICKER
-// HEADER COLOUR
-
-$('#header').minicolors()
-
-// update table colour after changes in the colour picker
-$("#header").on('change', function() {
-var newCol = $(this).parent().find('.minicolors-swatch-color').attr('style');
-
-$('.colourChosen').attr('style', newCol);
-
-});
 
 // H1 COLOUR
 
@@ -222,43 +173,6 @@ $('div.minicolors.minicolors-theme-default').removeClass ('minicolors-position-r
 $('div.minicolors.minicolors-theme-default').addClass ('minicolors-position-left');
 });
 
-
-// MINICOLORS SETTINGS (WHEEL)
-
-// ADD JUMBOTRON.
-
-$('.editorAddJumbotron').click(function() {
-$('.jumbotron').show().delay(500).fadeIn();
-$('.editorAddJumbotron').css('display', 'none');
-$('.editortrash').css('display', 'block');
-});
-
-// DELETE JUMBOTRON.
-
-$('.editortrash').click(function() {
-$('.jumbotron').show().delay(500).fadeOut();
-$('.editorAddJumbotron').css('display', 'block');
-$('.editortrash').css('display', 'none');
-});
-
-// BROWSE IMAGES > //
-
-$('.editorImages').click(function() {
-$('#browse').addClass ('animated fadeIn');
-$('#browse').css('display', 'block');
-$('.editorImages').css('display', 'none');
-$('.editorImagesOpen').css('display', 'block');
-});
-
-// BROWSE IMAGES < //
-
-$('.editorImagesOpen').click(function() {
-$('#browse').addClass ('fadeIn');
-$('#browse').removeClass ('fadeOut');
-$('#browse').css ('display', 'none');
-$('.editorImages').css('display', 'block');
-$('.editorImagesOpen').css('display', 'none');
-});
 
 // UPLOAD IMAGE
 
@@ -463,14 +377,3 @@ $('.minusFont').click(function() {
 });
 
 // STORE THE DESIGN
-
-$('#saveButton').click(function() {
-var options = {
-  files: [
-      // You can specify up to 100 files.
-      {'url': 'http://www.psdwordpress.com/madesmart/index.html'},
-      // ...
-  ],
-};
-Dropbox.save(options);
-});
